@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'vendor/autoload.php';
+
+use FlattrMail\Flattr;
+use FlattrMail\Mail;
+
+if (empty($argv[1]) || empty($argv[2])) {
+    die('usage: checkFlattrs <flattrUser> <email>' . PHP_EOL);
+}
+
+$flattr = new Flattr($argv[1]);
+$flattrs = $flattr->getFlattrsThisMonth($flattr->getFlattrs());
+
+if (!empty($flattrs)) {
+    $mail = new Mail;
+    $mail->sendReport($flattrs, $argv[2]);
+}

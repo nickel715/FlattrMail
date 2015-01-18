@@ -1,0 +1,22 @@
+{
+    "name": "nickel715/FlattrMail",
+    "description": "request flattrs via api and send mails with flattrs of the current month",
+    "homepage" : "https://github.com/nickel715/FlattrMail",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Hohm"
+        }
+    ],
+    "require": {
+        "zendframework/zend-http": "2.3.*",
+        "zendframework/zend-mail": "2.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FlattrMail\\": "src/"
+        }
+    },
+    "bin": ["checkFlattrs"]
+}
