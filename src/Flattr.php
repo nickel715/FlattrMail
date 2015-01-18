@@ -22,7 +22,7 @@ class Flattr
         $client->setUri($url);
         $response = $client->send();
         if (!$response->isSuccess()) {
-            throw new Exception('Error requesting flattr api: ' . $response->getBody(), 1);
+            throw new \Exception('Error requesting flattr api: ' . $response->getBody(), 1);
         }
         $body = $response->getBody();
         return json_decode($body, true);
